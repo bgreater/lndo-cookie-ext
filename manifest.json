@@ -6,11 +6,8 @@
   "permissions": [
     "webRequest",
     "webRequestBlocking",
-    "cookies"
-  ],
-  "host_permissions": [
-    "https://*.lndo.site/*",
-    "http://*.lndo.site/*"
+    "cookies",
+    "*://*.lndo.site/*"
   ],
   "background": {
     "scripts": ["background.js"],
