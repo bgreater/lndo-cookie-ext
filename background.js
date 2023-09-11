@@ -4,6 +4,7 @@ chrome.webRequest.onCompleted.addListener(
       // get domain from url
       const domain = details.url.split("/")[2];
       console.log('500 error detected, removing cookies');
+      // Remove all cookies except wordpress_*
       chrome.cookies.getAll({ domain }, function (cookies) {
         for (const element of cookies) {
           if (!element.name.startsWith("wordpress_")) {
@@ -12,6 +13,13 @@ chrome.webRequest.onCompleted.addListener(
               name: element.name,
             });
           }
+        }
+      });
+      // Refresh the page
+      chrome.storage.local.get('autoRefreshEnabled', function(data) {
+        if (data.autoRefreshEnabled) {
+          // Refresh the page
+          chrome.tabs.update(details.tabId, {url: details.url});
         }
       });
     }
