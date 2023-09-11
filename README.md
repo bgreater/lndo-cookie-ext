@@ -11,7 +11,7 @@ Here's what the code does:
 ## Installation
 To load the extension:
 
-1. Open Chrome and navigate to chrome://extensions/.
+1. Open Chrome and navigate to chrome://extensions/ or brave://extensions/ if you use brave.
 1. Enable "Developer mode" (usually a toggle switch in the top right corner).
 1. Click "Load unpacked" and select the directory containing your manifest.json and background.js.
 1. Now, your extension should be active. You can test it by navigating to a *.lndo.site URL that produces a 500 error and simply refreshing the page.
