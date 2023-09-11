@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "Clear Cookies on 500 Error",
+  "version": "1.0",
+  "description": "Clears cookies for URLs ending in .lndo.site on 500 error except cookies starting with wordpress_",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "cookies"
+  ],
+  "host_permissions": [
+    "https://*.lndo.site/*",
+    "http://*.lndo.site/*"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  }
+}
